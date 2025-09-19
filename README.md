@@ -1,7 +1,7 @@
 Station-Gym
 
 Integrantes:
-Samuel Gammondi (samuelgamondi01@gmail.com).
+Samuel Gamondi (samuelgamondi01@gmail.com).
 Facundo Uriel Rivarola ().
 
 Tematica:
