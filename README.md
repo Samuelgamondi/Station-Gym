@@ -24,3 +24,7 @@ y Publicacion guarda novedades creadas por el administrador.
 
 
 [db_station_gym.sql](https://github.com/user-attachments/files/22516083/db_station_gym.sql)
+
+
+
+Tuvimos que cambiar de base de datos, la cual cambiamos las tablas y sacamos la de horario como nos habian corregido, hacemos entrega del tp2.
