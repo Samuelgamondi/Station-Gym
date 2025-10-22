@@ -1,1 +1,0 @@
-<?php class Actividad { public $id; public $nombre; public $descripcion; public $imagen; public $tipo_id; } ?>
