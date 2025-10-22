@@ -1,30 +1,44 @@
-Station-Gym
+# Entrega TPE 2 - Station Gym
 
-Integrantes:
+## Integrantes
+- Gamondi Samuel (samuelgamondi01@gmail.com).
+- Rivarola Facundo Uriel (rivarolauriel2002@gmail.com).
 
-Samuel Gamondi (samuelgamondi01@gmail.com).
-Facundo Uriel Rivarola (rivarolauriel2002@gmail.com).
+## Temática
+Sitio web dinámico de un gimnasio donde se listan **actividades** (entrenamientos, clases) clasificadas por **tipos** (por ejemplo: gimnasia, baile).
 
-Tematica:
+## Descripción general
+El sistema permite:
+- Ver todas las actividades y sus categorías.
+- Ver las actividades pertenecientes a un tipo.
+- Panel de administración con login (`webadmin / admin`) para crear, editar o eliminar actividades y tipos.
+- Cargar imágenes por URL.
 
-El proyecto va a ser una pagina de gimnasio donde las principales funcionalidades que se busca es:
-1.Regristro y login de usuarios.
-2.Reserva de horarios para entrenar.
-3.Gestion de publicaciones informativas, control interno de reservas y usuarios por parte del admin.
+## Estructura general (MVC)
+- `/public/index.php`: Router principal 
+- `/app/controllers/`: Controladores de lógica
+- `/app/views/`: Vistas HTML con plantillas 
+- `/init_db.php`: Crea y llena la base de datos si no existe
+- `/config.php`: Parámetros de conexión y BASE_URL
 
-La relaciones entre tablas serian:
+## Instalación
+1. Colocar la carpeta del proyecto en `htdocs` o carpeta pública del servidor local.
+2. Crear una base vacía (por ejemplo `station_gym`) en phpMyAdmin.
+3. Ingresar a `http://localhost/station-gym/public/`.
+4. Si la base no existe, se crea automáticamente.
+5. Login admin: **usuario:** `webadmin` / **contraseña:** `admin`.
 
-Usuario es la tabla base (cliente + admin) el cual se relaciona con reserva ya que un usuario puede tener muchas reservas,
-Horario definne los turnos disponibles y un horario puede estar reservado por muchos usuarios,
-Reserva conecta usuarios con horarios,
-y Publicacion guarda novedades creadas por el administrador.
+## DER
+El siguiente diagrama muestra la relación 1–N entre las entidades principales:
+![Diagrama Entidad-Relación](der.png)
 
+## Modelo de datos (resumen)
+- **tipos**: `id`, `nombre`
+- **actividades**: `id`, `nombre`, `descripcion`, `imagen`, `tipo_id`
+- **usuarios**: `id`, `username`, `password_hash`, `rol`
 
-![DER](https://github.com/user-attachments/assets/7daf37a0-6e00-4f4f-955e-4e3ceea38910)
+Relación: **1 tipo → N actividades**
 
+## Archivo SQL
 
-[db_station_gym.sql](https://github.com/user-attachments/files/22516083/db_station_gym.sql)
-
-
-
-Tuvimos que cambiar de base de datos, la cual cambiamos las tablas y sacamos la de horario como nos habian corregido, hacemos entrega del tp2.
+[Descargar base de datos (station_gym.sql)](station_gym_db.sql)
